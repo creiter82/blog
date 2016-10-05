@@ -59,3 +59,11 @@
 .btn-primary:visited, .btn-danger:visited {
     color: white;
 }
+
+.thin {
+    font-weight: lighter;
+    small {
+        font-weight: lighter;
+        font-size: 24px;
+    }
+}
