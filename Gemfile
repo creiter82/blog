@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 gem 'rails',                  '4.2.5'
 gem 'sass-rails',             '~> 5.0'
+gem 'less-rails',             '2.7.1'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'devise-bootstrap-views'
