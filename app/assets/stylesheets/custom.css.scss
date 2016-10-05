@@ -1,50 +1,16 @@
 .user-name {
-    padding: 0 !important;
-    padding-left: 5px;
-    padding-top: 15px !important;
     text-align: center;
-    
-    a {
-        color: black !important;
-        margin: 0 !important;
-        padding: 5px !important;
-    }
+    padding-right: 10px;
     a:hover, a:focus {
         color: black !important;
-    }
-}
-
-.logout {
-    padding-left: 0;
-}
-
-.nav.navbar-right {
-    padding-bottom: 10px;
-    padding-top: 5px;
-}
-
-.nav.navbar-nav {
-    .navbar-link {
-        border-radius: 5px;
-        color: white;
-        margin-top: 15px;
-        padding: 8px;
-    }
-    
-    .navbar-link:focus, .navbar-link:hover {
         background: #3071a9;
-        color: white;
-    }
-    
-    li a {
-        margin-right: 5px;
     }
 }
 
 .nav.navbar-right li {
     .btn {
         color: white !important;
-        margin-top: 5%;
+        /*margin-top: 5%;*/
     }
     
     .btn-danger:hover, .btn-danger:focus {
@@ -58,4 +24,12 @@
 
 .btn-primary:visited, .btn-danger:visited {
     color: white;
+}
+
+.thin {
+    font-weight: lighter;
+    small {
+        font-weight: lighter;
+        font-size: 24px;
+    }
 }
