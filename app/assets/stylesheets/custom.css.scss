@@ -1,11 +1,4 @@
-.user-name {
-    text-align: center;
-    padding-right: 10px;
-    a:hover, a:focus {
-        color: black !important;
-        background: #3071a9;
-    }
-}
+// Navbar
 
 .nav.navbar-right li {
     .btn {
@@ -26,10 +19,20 @@
     color: white;
 }
 
+.user-name {
+    text-align: center;
+    padding-right: 10px;
+    a:hover, a:focus {
+        color: black !important;
+        background: #3071a9;
+    }
+}
+
+// Index
+
 .thin {
     font-weight: lighter;
     small {
         font-weight: lighter;
-        font-size: 24px;
     }
 }
