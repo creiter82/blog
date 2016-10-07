@@ -189,7 +189,7 @@ DEPENDENCIES
   devise-bootstrap-views
   jbuilder (~> 2.0)
   jquery-rails
-  less-rails (= 2.7.1)
+  less-rails
   pg
   rails (= 4.2.5)
   rails_12factor
