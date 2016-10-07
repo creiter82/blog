@@ -16,7 +16,7 @@
         <ul class="nav navbar-right navbar-btn">
           <li>
             <%= link_to('Logout', destroy_user_session_path,
-                                  class: 'btn btn-danger',
+                                  class: 'btn btn-xs btn-danger',
                                   title: 'Logout',
                                   :method => :delete) %>
           </li>                        
@@ -32,7 +32,7 @@
         <ul class="nav navbar-right navbar-btn">
           <li>
             <%= link_to('Sign In', new_user_session_path,
-                                    class: 'btn btn-primary',
+                                    class: 'btn btn-xs btn-primary',
                                     title: 'Sign In') %>
           </li>                          
         </ul>
