@@ -1,5 +1,16 @@
 // Navbar
 
+.navbar-brand {
+    font-size: 26px;
+    font-weight: lighter;
+}
+
+@media (min-width: 768px) {
+    .add-padding {
+        padding-right: 15px;
+    }
+}
+
 .nav.navbar-right li {
     .btn {
         color: white !important;
@@ -19,11 +30,11 @@
     color: white;
 }
 
-.navbar {
+/*.navbar {
     .btn {
         padding: 6px 8px;
     }
-}        
+}*/        
 
 .user-name {
     text-align: center;
@@ -35,6 +46,13 @@
 }
 
 // Index
+
+.quote {
+    margin-bottom: 20px;
+    h3 {
+        margin-top: 0px;
+    }
+}
 
 .thin {
     font-weight: lighter;

@@ -5,13 +5,14 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="#">Eluding Success</a>
+    <%= link_to 'Eluding Success', root_path, class: "navbar-brand" %>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
       <ul class="nav navbar-nav">
         <li><%= link_to "Link1", "/path1"  %></li>
         <li><%= link_to "Link2", "/path2"  %></li>
         <li><%= link_to "Link3", "/path3"  %></li>
       </ul>
+      <div class="add-padding">
       <% if current_user %>                                       
         <ul class="nav navbar-right navbar-btn">
           <li>
@@ -32,11 +33,12 @@
         <ul class="nav navbar-right navbar-btn">
           <li>
             <%= link_to('Sign In', new_user_session_path,
-                                    class: 'btn btn-xs btn-primary',
+                                    class: 'btn btn-primary',
                                     title: 'Sign In') %>
           </li>                          
         </ul>
       <% end %>
+      </div>
     </div>
   </div>
 </div>
