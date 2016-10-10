@@ -14,10 +14,16 @@
     }
 }
 
+.nav {
+    .btn {
+        font-weight: normal!important;
+    }
+}
+
 .nav.navbar-right li {
     .btn {
         color: white !important;
-        margin-top: 5%;
+        /*margin-top: 5%;*/
     }
     
     .btn-danger:hover, .btn-danger:focus {
