@@ -9,12 +9,15 @@
     .add-padding {
         padding-right: 15px;
     }
+    .padding-left {
+        padding-left: 15px;
+    }
 }
 
 .nav.navbar-right li {
     .btn {
         color: white !important;
-        /*margin-top: 5%;*/
+        margin-top: 5%;
     }
     
     .btn-danger:hover, .btn-danger:focus {
@@ -28,14 +31,22 @@
 
 .btn-primary:visited, .btn-danger:visited {
     color: white;
-}        
+}  
+
+.navbar-default .navbar-nav > li > a {
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
 
 .user-name {
     text-align: center;
-    padding-right: 10px;
+    padding-right: 5px;
+    a {
+        color: #777;
+    }
     a:hover, a:focus {
         color: black !important;
-        background: #3071a9;
+        background: #eee!important;
     }
 }
 

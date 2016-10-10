@@ -7,37 +7,37 @@
     </button>
     <%= link_to 'Eluding Success', root_path, class: "navbar-brand" %>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
-      <ul class="nav navbar-nav">
+      <div class="add-padding">
+        <% if current_user %>                                       
+          <ul class="nav navbar-right">
+            <li>
+              <%= link_to('Logout', destroy_user_session_path,
+                                    class: 'btn btn-danger',
+                                    title: 'Logout',
+                                    :method => :delete) %>
+            </li>                        
+          </ul>
+          <ul class="nav navbar-nav navbar-right user-name">
+            <li>
+              <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.first_name, length: 25)).html_safe, 
+                                                  edit_user_registration_path, 
+                                                  title: 'Edit Profile' %>
+            </li>                                      
+          </ul> 
+        <% else %>
+          <ul class="nav navbar-right padding-left">
+            <li>
+              <%= link_to('Sign In', new_user_session_path,
+                                      class: 'btn btn-primary',
+                                      title: 'Sign In') %>
+            </li>                          
+          </ul>
+        <% end %>
+      </div>
+      <ul class="nav navbar-nav navbar-right add-padding">
         <li><%= link_to "Blog", ""  %></li>
         <li><%= link_to "Contact", ""  %></li>
       </ul>
-      <div class="add-padding">
-      <% if current_user %>                                       
-        <ul class="nav navbar-right">
-          <li>
-            <%= link_to('Logout', destroy_user_session_path,
-                                  class: 'btn btn-danger',
-                                  title: 'Logout',
-                                  :method => :delete) %>
-          </li>                        
-        </ul>
-        <ul class="nav navbar-right navbar-btn user-name">
-          <li>
-            <%= link_to ('<i class="fa fa-user"></i> ' + truncate(current_user.first_name, length: 25)).html_safe, 
-                                                edit_user_registration_path, 
-                                                title: 'Edit Profile' %>
-          </li>                                      
-        </ul> 
-      <% else %>
-        <ul class="nav navbar-right">
-          <li>
-            <%= link_to('Sign In', new_user_session_path,
-                                    class: 'btn btn-primary',
-                                    title: 'Sign In') %>
-          </li>                          
-        </ul>
-      <% end %>
-      </div>
     </div>
   </div>
 </div>
