@@ -1,3 +1,22 @@
+// Global
+
+$link-color: darken(#428bca, 6.5%);
+
+.header {
+    margin-bottom: 20px;
+    h1 {
+        font-weight: lighter;
+    }
+}
+
+p {
+    font-size: 16px!important;
+}
+
+a {
+    text-decoration: none!important;
+}
+
 // Navbar
 
 .navbar-brand {
@@ -71,5 +90,40 @@
     font-weight: lighter;
     small {
         font-weight: lighter;
+    }
+}
+
+// Post
+
+.post-btn {
+    margin-bottom: 30px;
+}
+
+.post {
+    .muted {
+        color: lighten(#777, 30%);
+    }
+}
+
+.post-contents {
+    .muted {
+        color: lighten(#777, 30%);
+    }
+}
+
+.comments {
+    .comment-author {
+        color: $link-color;
+    }
+    .muted {
+        color: lighten(#777, 30%);
+    }
+}
+
+// Footer
+
+footer {
+    p {
+        font-size: 12px!important;
     }
 }

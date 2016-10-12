@@ -1,0 +1,36 @@
+<% if @post.errors.any? %>
+    <div class="alert alert-danger col-md-8 col-md-offset-2">
+        <ul>
+            <% @post.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+    </div>        
+<% end %>
+<div class="row">
+    <div class="col-md-8">
+        <%= form_for(@post, :html => {class: "form-horizontal", 
+                                      role: "form"}) do |f| %>
+            <div class="form-group">
+                <%= f.label :title, class: "col-sm-2 control-label" %>
+                <div class="col-sm-6">
+                    <%= f.text_field :title, autofocus: "true", 
+                                             class: "form-control" %>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <%= f.label :content, class: "col-sm-2 control-label" %>
+                <div class="col-sm-10">
+                    <%= f.text_area :content, rows: 20, class: "form-control" %>
+                </div>
+            </div>
+            
+            <div class="col-sm-4 col-sm-offset-2">
+                <%= f.submit(@post.new_record? ? 'Create Post' : 'Edit Post', class: "btn btn-primary") %>
+                <%= link_to 'Cancel', posts_path, class: "btn btn-danger" %>
+            </div>
+            
+        <% end %>
+    </div>
+</div>

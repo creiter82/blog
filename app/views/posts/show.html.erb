@@ -1,0 +1,80 @@
+<% content_for :title do %>
+    <%= @post.title %>
+<% end %>
+
+<div class="container">
+    <div class="header text-center">
+        <h1><%= @post.title %></h1>
+        <hr>
+    </div>
+    <div class="post-contents">
+        <p><%= simple_format(@post.content) %></p>
+        <p class="muted">
+            <small><%= time_ago_in_words(@post.created_at) %> ago</small>
+        </p>
+        <%= link_to 'Back to blog', posts_path %> 
+        <% if current_user.try(:admin?) %>
+            | <%= link_to 'Edit', post_path(@post.id) %>
+        <% end %>
+    </div>
+    <hr>
+    
+    <div class="col-md-8 comments">
+        
+        <% if @comment.errors.any? %>
+            <div class="alert alert-danger">
+                <ul>
+                    <% @comment.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                </ul>
+            </div>        
+        <% end %>
+        
+        <div class="row">
+            <h4>Leave a comment</h4>
+        </div>
+        <div class="row">
+            <%= form_for([@post, @comment], :html => { class: "form-horizontal",
+                                                        role: "form"}) do |f| %>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <%= f.text_area :content, class: "form-control" %>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <% if current_user %>
+                        <%= f.submit 'Comment', class: 'btn btn-xs btn-primary' %>
+                    <% else %>
+                        <%= link_to('Login to Comment', new_user_session_path,
+                                      class: 'btn btn-primary',
+                                      title: 'Login to Comment') %> 
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+        
+        <div class="row">
+            <h4>Comments <small><%= @post.comments.count %> <i class="fa fa-comments-o" aria-hidden="true"></i></small></h4>
+            <hr>
+            <% if @comments %>
+                <% @comments.each do |comment| %>
+                    <p><%= link_to "#{comment.user.first_name}", '' %> said...</p>
+                    <p="each-comment">
+                        <%= simple_format(comment.content.html_safe) %>
+                    </p>
+                    <p class="muted">
+                        <i class="fa fa-comment-o" aria-hidden="true"></i>
+                        <small>
+                            <%= time_ago_in_words(comment.created_at) %> ago
+                        </small>
+                    </p>
+                    <% if current_user.try(:admin?) %>
+                        <p><%= link_to 'Remove', '', class: 'btn btn-xs btn-danger' %></p>
+                    <% end %>    
+                    <hr>
+                <% end %>
+            <% end %>
+        </div>    
+    </div>
+</div>

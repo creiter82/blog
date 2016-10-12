@@ -1,0 +1,46 @@
+<% content_for :title do %>
+  Blog
+<% end %>
+
+<div class="container">
+    
+    <div class="header">
+        <h1 class="text-center">This is the Blog for Eluding Success</h1>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-9">
+            <% if current_user.try(:admin?) %>
+                <%= link_to "New Blog Post", new_post_path, class: "btn btn-lg btn-primary post-btn" %>
+            <% end %>
+            <div class="post">
+                <% @posts.each do |post| %>
+                    <div class="post-title"></div>
+                    <h3>
+                        <%= link_to post.title.titleize, post_path(post.id) %>
+                        <% if current_user.try(:admin?) %>
+                            <%= link_to 'Edit', edit_post_path(post.id), 
+                                                class: "btn btn-xs btn-info" %>
+                        <% end %>
+                    </h3>
+                    <p><%= truncate(simple_format(post.content.html_safe), length: 50, escape: false) %></p>
+                    <p class="muted"><small><%= time_ago_in_words(post.created_at) %> ago</small></p>
+                    <hr>
+                <% end %>
+            </div>    
+        </div>
+        
+        <div class="col-lg-3">
+            <div class="well sidebar-nav">
+              <h3 style="margin-top: 0px;">Sidebar</h3>
+              <ul class="nav nav-list">
+                <li class="nav-header">Sidebar</li>
+                <li><%= link_to "Link1", "/path1"  %></li>
+                <li><%= link_to "Link2", "/path2"  %></li>
+                <li><%= link_to "Link3", "/path3"  %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>    
+</div>
