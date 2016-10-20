@@ -70,7 +70,7 @@
                         </small>
                     </p>
                     <% if current_user.try(:admin?) %>
-                        <p><%= link_to 'Remove', '', class: 'btn btn-xs btn-danger' %></p>
+                        <p><%= link_to 'Remove', post_comment_path(comment.post, comment), method: :delete, data: {confirm: "You sure?"}, class: 'btn btn-xs btn-danger' %></p>
                     <% end %>    
                     <hr>
                 <% end %>

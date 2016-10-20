@@ -2,7 +2,7 @@ class PostsController < ApplicationController
     before_action :is_admin?, except: [:index, :show]
     
     def index
-        @posts = Post.all
+        @posts = Post.order("created_at DESC").all
     end
     
     def new
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
     def show
        @post = Post.find(params[:id]) 
        @comment = Comment.new(post_id: @post.id)
-       @comments = @post.comments.order("created_at DESC").all
+       @comments = @post.comments.order("created_at ASC").all
     end
     
     
