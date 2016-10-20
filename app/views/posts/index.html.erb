@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-md-9">
             <% if current_user.try(:admin?) %>
-                <%= link_to "New Blog Post", new_post_path, class: "btn btn-lg btn-primary post-btn" %>
+                <%= link_to "New Blog Post", new_post_path, class: "btn btn-md btn-primary post-btn" %>
             <% end %>
             <div class="post">
                 <% @posts.each do |post| %>
