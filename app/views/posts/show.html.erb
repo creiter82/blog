@@ -44,7 +44,7 @@
                 </div>
                 <div class="pull-right">
                     <% if current_user %>
-                        <%= f.submit 'Comment', class: 'btn btn-xs btn-primary' %>
+                        <%= f.submit 'Comment', class: 'btn btn-primary' %>
                     <% else %>
                         <%= link_to('Login to Comment', new_user_session_path,
                                       class: 'btn btn-primary',

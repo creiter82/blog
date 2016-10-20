@@ -24,7 +24,16 @@
                         <% end %>
                     </h3>
                     <p><%= truncate(simple_format(post.content.html_safe), length: 50, escape: false) %></p>
-                    <p class="muted"><small><%= time_ago_in_words(post.created_at) %> ago</small></p>
+                    
+                    <p class="muted">
+                        <small>
+                            <%= time_ago_in_words(post.created_at) %> ago<br />
+                            <% if post.comments.any? %>
+                               <i class="fa fa-comments-o" aria-hidden="true"> 
+                               <%= post.comments.count %></i>
+                            <% end %>
+                        </small>
+                    </p>
                     <hr>
                 <% end %>
             </div>    
